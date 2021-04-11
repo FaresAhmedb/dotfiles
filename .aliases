@@ -65,7 +65,7 @@ alias pingg='ping google.com'
 alias ls='exa'
 
 # Disk managment
-# Files/Folders list according to size # Doesn't work on /
+# Files/Folders list according to size Doesn't work on '/'
 alias duf='du -hsx * 2>/dev/null | sort -hr | head -n 5'
 
 # Reload shell
