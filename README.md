@@ -1,2 +1,1 @@
-# dotfiles
-My personal dotfiles
+# dotfiles - My Personal dotfiles 🎴 and preferences for Linux 🐧
