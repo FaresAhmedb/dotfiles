@@ -1,0 +1,83 @@
+# Credits
+
+#  ______
+# |  ____/\               The MIT License (MIT) 
+# | |__ /  \
+# |  __/ /\ \    Fares Ahmed .alias dotfile
+# | | / ____ \   Hosted on Github.com/FaresAhmedb/dotfiles
+# |_|/_/    \_\
+
+# Thanks to Josh Sherman for "Safty first", "Colorize cat with bat"
+# Check the rest of his aliases on github
+# github.com/joshtronic/dotfiles/blob/master/aliases
+
+# Thanks to Jonas Devlieghere for "Show IP addresses", "Reload shell"
+# Check the rest of his aliases on github
+# https://github.com/JDevlieghere/dotfiles/blob/main/.aliases
+
+# Thanks to ntubski linuxquetions.org user for "haveProg"
+# ntubski answer
+# https://www.linuxquestions.org/questions/programming-9/bash-determine-what-package-manager-to-use-817036/#post4018585
+
+
+# Functions
+
+haveProg() {
+    [ -x "$(which $1)" ]
+}
+
+
+# Aliases
+
+# Safety first
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+# Allow sudo in alias
+alias sudo='sudo '
+
+# Colorize cat with bat
+alias cat='bat'
+
+# Basic Aliases
+alias python='python3.9'
+alias network_usage='vnstat'
+
+# Replace PM with sudo PM
+if haveProg apt ; then alias apt='sudo apt'
+elif haveProg dnf ; then alias dnf='sudo dnf'
+elif haveProg dpkg ; then alias dpkg='sudo dpkg'
+elif haveProg pacman ; then alias pacman='sudo pacman'
+elif haveProg pacmac ; then alias pacmac='sudo pacmac'
+elif haveProg rpm ; then alias rpm='sudo rpm'
+elif haveProg yay ; then alias yay='sudo yay'
+elif haveProg yum ; then alias ymu='sudo yum'
+else
+    echo 'No Package manager found!'
+    echo 'Add your own or remove this alias in .aliases Ln 38'
+
+# Ping to run 5 times
+alias ping='ping -c 5'
+alias pingg='ping google.com'
+
+# Replace ls by exa
+alias ls='exa'
+
+# Disk managment
+# Files/Folders list according to size # Doesn't work on /
+alias duf='du -hsx * 2>/dev/null | sort -hr | head -n 5'
+
+# Reload shell
+alias reload="exec $SHELL -l"
+
+# Show IP addresses
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+# Tabs Show/Hide Gnome Only (I think)
+alias tbhide='xprop -f _MOTIF_WM_HINTS 32c -set _MOTIF_WM_HINTS "0x2, 0x0, 0x0, 0x0, 0x0"'
+alias tbshow='xprop -f _MOTIF_WM_HINTS 32c -set _MOTIF_WM_HINTS "0x2, 0x0, 0x1, 0x0, 0x0"'
+
+# Root Permissions
+alias root='sudo -i'
+alias su='sudo -i'
