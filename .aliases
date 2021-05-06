@@ -86,7 +86,7 @@ alias ll='exa -l -g --icons'
 alias lla='ll -a'
 
 # Disk managment
-# Files/Folders list according to size # Doesn't work on /
+# Files/Folders list according to size Doesn't work on "/"
 alias duf='du -hsx * 2>/dev/null | sort -hr | head -n 5'
 
 # Reload shell
