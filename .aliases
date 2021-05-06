@@ -34,8 +34,24 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
-# Allow sudo in alias
+# Allow sudo in aliases
 alias sudo='sudo '
+
+# Jump between directories
+alias -='cd -'
+alias ...=../..
+alias ....=../../..
+alias .....=../../../..
+alias ......=../../../../..
+alias 1='cd -'
+alias 2='cd -2'
+alias 3='cd -3'
+alias 4='cd -4'
+alias 5='cd -5'
+alias 6='cd -6'
+alias 7='cd -7'
+alias 8='cd -8'
+alias 9='cd -9'
 
 # Colorize cat with bat
 alias cat='bat'
@@ -44,8 +60,10 @@ alias cat='bat'
 alias python='python3.9'
 alias network_usage='vnstat'
 
-# Replace PM with sudo PM
+# Replace PM with sudo PM 
+# (Where PM is your package manager)
 if haveProg apt ; then alias apt='sudo apt'
+elif haveProg apt-get ; then alias apt-get='sudo apt-get'
 elif haveProg dnf ; then alias dnf='sudo dnf'
 elif haveProg dpkg ; then alias dpkg='sudo dpkg'
 elif haveProg pacman ; then alias pacman='sudo pacman'
@@ -56,13 +74,16 @@ elif haveProg yum ; then alias ymu='sudo yum'
 else
     echo 'No Package manager found!'
     echo 'Add your own or remove this alias in .aliases Ln 38'
+fi
 
 # Ping to run 5 times
 alias ping='ping -c 5'
 alias pingg='ping google.com'
 
 # Replace ls by exa
-alias ls='exa'
+alias ls='exa' 
+alias ll='exa -l -g --icons'
+alias lla='ll -a'
 
 # Disk managment
 # Files/Folders list according to size # Doesn't work on /
@@ -81,3 +102,20 @@ alias tbshow='xprop -f _MOTIF_WM_HINTS 32c -set _MOTIF_WM_HINTS "0x2, 0x0, 0x1, 
 # Root Permissions
 alias root='sudo -i'
 alias su='sudo -i'
+
+# ViM -> nViM
+alias vim='nvim'
+
+# Rust Aliases
+alias rs='rustc'
+alias c='cargo'
+alias cn='cargo new'
+alias cb='cargo build'
+alias cbl='cargo build --release'
+alias ct='cargo test'
+alias cc='cargo check'
+alias cr='cargo run'
+
+# C++ Aliases
+alias g++='g++ -Wall -Wextra  -Wstrict-aliasing -pedantic -fmax-errors=5 -Werror -Wunreachable-code -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self -Wlogical-op -Wmissing-include-dirs -Wnoexcept -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-null-sentinel -Wstrict-overflow=5 -Wswitch-default -Wundef -Wno-unused -Wno-variadic-macros -Wno-parentheses -fdiagnostics-show-option'
+
